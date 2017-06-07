@@ -1,0 +1,8 @@
+node_modules/
+bower_components/
+kinvey/
+
+static/url-tester/scripts/**/*
+!static/url-tester/scripts/main.js
+client/
+coverage/

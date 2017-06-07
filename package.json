@@ -1,0 +1,24 @@
+{
+  "name": "vue-server-side",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "express": "^4.15.3",
+    "juice": "^4.1.0",
+    "lodash": "^4.17.4",
+    "vue": "^2.3.3",
+    "vue-server-renderer": "^2.3.3"
+  },
+  "devDependencies": {
+    "eslint-plugin-mocha": "^4.9.0",
+    "superagent": "^3.5.2"
+  }
+}
