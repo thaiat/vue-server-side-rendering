@@ -19,7 +19,6 @@
     "vue-server-renderer": "^2.3.3"
   },
   "devDependencies": {
-    "eslint-plugin-mocha": "^4.9.0",
-    "superagent": "^3.5.2"
+    "eslint-plugin-mocha": "^4.9.0"
   }
 }
