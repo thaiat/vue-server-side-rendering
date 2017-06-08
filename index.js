@@ -7,9 +7,10 @@ const mail = require('./lib/mail');
 
 const EMAIL_TO = ['thaiat@yoobic.com'];
 
-axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.data)
+axios.get('https://randomuser.me/api/?page=3&results=10&seed=abc')
+    .then(response => response.data.results)
     .then(users => {
+        console.time('generation');
         const data = {
             message: 'Yoo!!!!',
             display: false,
@@ -21,10 +22,10 @@ axios.get('https://jsonplaceholder.typicode.com/users')
         var app = appFactory(data, 'index.html', [
             require('./templates/components/Hello')
         ]);
-        return renderer('index.template.html', ['../node_modules/vuetify/dist/vuetify.min.css', 'style.css'], app);
+        return renderer('index.template.html', ['../node_modules/vuetify/dist/vuetify.min.css', 'style.css'], app, true);
     })
     .then(html => {
-
+        console.timeEnd('generation');
         return mail.send({
             email: {
                 to: EMAIL_TO,

@@ -1,9 +1,4 @@
-<div>
-    <div>I am an Hello component</div>
-    <div :class="[color]"> And the color is {{color}}</div>
-    <ul>
-        <li v-for="user in users">{{user.name}}</li>
-    </ul>
+<v-container>
 
     <v-toolbar class="green" light>
         <v-toolbar-side-icon light></v-toolbar-side-icon>
@@ -19,6 +14,42 @@
             <v-icon>more_vert</v-icon>
         </v-btn>
     </v-toolbar>
+
+    <quote>I am an Hello component</quote>
+    <p :class="[color]"> And the color is {{color}}</p>
+
+    <v-layout row>
+        <v-flex xs12>
+            <v-card>
+                <v-toolbar class="cyan" light>
+                    <v-toolbar-side-icon light></v-toolbar-side-icon>
+                    <v-toolbar-title>Inbox</v-toolbar-title>
+                    <v-btn light icon>
+                        <v-icon>search</v-icon>
+                    </v-btn>
+                </v-toolbar>
+                <v-list two-line>
+                    <template v-for="(user, userIndex) in users">
+
+                        <v-list-item :key="user.email">
+                            <v-list-tile avatar ripple>
+                                <v-list-tile-avatar>
+                                    <img v-bind:src="user.picture.thumbnail">
+                                </v-list-tile-avatar>
+                                </v-list-tile-avatar>
+                                <v-list-tile-content>
+                                    <v-list-tile-title v-html="fullNames[userIndex]"></v-list-tile-title>
+                                    <v-list-tile-sub-title v-html="user.cell"></v-list-tile-sub-title>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                            <v-divider inset></v-divider>
+                        </v-list-item>
+                    </template>
+                </v-list>
+            </v-card>
+        </v-flex>
+    </v-layout>
+
     <br/>
     <v-divider></v-divider>
     <br/>
@@ -58,4 +89,4 @@
             </v-btn>
         </v-card-row>
     </v-card>
-</div>
+</v-container>
