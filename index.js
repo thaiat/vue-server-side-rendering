@@ -16,6 +16,7 @@ axios.all([
             message: 'Yoo!!!!',
             display: false,
             color: 'yellow',
+            img: './templates/images/g-b-2x.png',
             users: userResponse.data.results,
             food: foodResponse.data.results[0].food,
             card_text: loremResponse.data.text
@@ -32,6 +33,7 @@ axios.all([
     })
     .then(html => {
         console.timeEnd('generation');
+      
         return mail.send({
             email: {
                 to: EMAIL_TO,

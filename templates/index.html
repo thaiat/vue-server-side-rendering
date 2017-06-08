@@ -1,5 +1,7 @@
 <div>
+    <img style="display:block" :src="img | base64" />
     <h4>{{message}}</h4>
     <quote>Translated message: {{ $t("message.hello", {name:'Avi'}) }}</quote>
+
     <hello :color="color" :users="users" :card_text="card_text" :food="food"></hello>
 </div>

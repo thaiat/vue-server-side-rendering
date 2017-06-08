@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "base64-img": "^1.0.3",
     "express": "^4.15.3",
     "juice": "^4.1.0",
     "lodash": "^4.17.4",
