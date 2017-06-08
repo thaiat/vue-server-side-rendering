@@ -6,8 +6,14 @@ const axios = require('axios');
 const mail = require('./lib/mail');
 
 const EMAIL_TO = ['thaiat@yoobic.com'];
-
-axios.get('https://randomuser.me/api/?page=3&results=10&seed=abc')
+axios.all([axios.get('https://randomuser.me/api/?page=3&results=10&seed=abc'), axios.get('https://randomapi.com/api/el3rc6as?key=2D3S-2MX2-EHXY-DDF6')])
+    .then(axios.spread((users, food) => {
+        console.log(food);
+        return users;
+    }))
+    .then(() => {
+        throw new Error('ee');
+    })
     .then(response => response.data.results)
     .then(users => {
         console.time('generation');
