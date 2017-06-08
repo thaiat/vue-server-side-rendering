@@ -1,4 +1,5 @@
 <div>
     <h4>{{message}}</h4>
+    <quote>Translated message: {{ $t("message.hello", {name:'Avi'}) }}</quote>
     <hello :color="color" :users="users" :card_text="card_text" :food="food"></hello>
 </div>
