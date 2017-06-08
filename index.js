@@ -26,14 +26,14 @@ axios.all([
     .then(data => {
         console.time('generation');
 
-        var app = appFactory(data, 'index.html', [
+        var app = appFactory(data, 'index.html', 'ja', [
             require('./templates/components/Hello')
         ]);
         return renderer('index.template.html', ['../node_modules/vuetify/dist/vuetify.min.css', 'style.css'], app, true);
     })
     .then(html => {
         console.timeEnd('generation');
-      
+
         return mail.send({
             email: {
                 to: EMAIL_TO,
