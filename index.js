@@ -4,6 +4,9 @@ var appFactory = require('./lib/vue-app-factory');
 var renderer = require('./lib/vue-renderer');
 const axios = require('axios');
 const mail = require('./lib/mail');
+
+const EMAIL_TO = ['thaiat@yoobic.com'];
+
 axios.get('https://jsonplaceholder.typicode.com/users')
     .then(response => response.data)
     .then(users => {
@@ -21,11 +24,15 @@ axios.get('https://jsonplaceholder.typicode.com/users')
         return renderer('index.template.html', ['../node_modules/vuetify/dist/vuetify.min.css', 'style.css'], app);
     })
     .then(html => {
-        mail.send({
+
+        return mail.send({
             email: {
-                to: ['thaiat@yoobic.com'],
+                to: EMAIL_TO,
                 html: html,
                 subject: 'Vuejs template'
             }
         });
+    })
+    .then(res => {
+        console.log('Email was sent to ', EMAIL_TO);
     });
