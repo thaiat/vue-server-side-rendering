@@ -16,7 +16,7 @@ axios.get('https://jsonplaceholder.typicode.com/users')
         var app = appFactory(data, 'index.html', [
             require('./templates/components/Hello')
         ]);
-        return renderer('index.template.html', 'style.css', app);
+        return renderer('index.template.html', ['../node_modules/vuetify/dist/vuetify.min.css', 'style.css'], app);
     })
     .then(res => {
         console.log(res);

@@ -16,7 +16,8 @@
     "juice": "^4.1.0",
     "lodash": "^4.17.4",
     "vue": "^2.3.3",
-    "vue-server-renderer": "^2.3.3"
+    "vue-server-renderer": "^2.3.3",
+    "vuetify": "^0.12.7"
   },
   "devDependencies": {
     "eslint-plugin-mocha": "^4.9.0"
