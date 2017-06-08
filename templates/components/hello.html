@@ -79,7 +79,7 @@
         </v-card-row>
         <v-card-row img="http://www.lboro.ac.uk/media/wwwlboroacuk/external/content/research/sti/slide1.png" height="300px"></v-card-row>
         <v-card-text class="blue-grey darken-3 white--text">
-            <div v-text="card_text"></div>
+            <div v-html="card_text"></div>
         </v-card-text>
         <v-card-row actions class="blue-grey darken-1 mt-0">
             <v-btn flat class="white--text">Get Started</v-btn>
@@ -90,7 +90,7 @@
         </v-card-row>
     </v-card>
     <br/>
-    <v-data-table v-bind:headers="headers" :items="items" hide-actions class="elevation-1">
+    <v-data-table v-bind:headers="food.headers" :items="food.items" hide-actions class="elevation-10">
         <template slot="items" scope="props">
             <td>{{ props.item.name }}</td>
             <td class="text-xs-right">{{ props.item.calories }}</td>
